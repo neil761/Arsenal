@@ -1,73 +1,48 @@
 import 'package:flutter/material.dart';
-import 'pages/operator.dart';
+import 'package:codm/pages/home.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: Scaffold(
-      backgroundColor: Color.fromARGB(255, 28, 28, 28),
-      appBar: AppBar(
-        title: Text('CODM Arsenal', 
-        style: TextStyle(
-          color: Colors.white
-        ),),
-        backgroundColor: const Color.fromARGB(255, 75, 83, 32),
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-                Text('Operators', 
-                  style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white
-                ),),
-          Container(
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 65),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 2, color: const Color.fromARGB(255, 85, 85, 85)),
-                    borderRadius: BorderRadius.all(Radius.circular(3))
-                  ),
-                  child: GestureDetector(
-                    onTap: () {},
-                    child: Image.asset(
-                    'lib/assets/operator.jpg',
-                    width: 250,
-                    ),
-                  )
-                )
-              ],
-            ),
-          ),
-              Text('Guns', 
-                  style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white
-                ),),
-          Container(
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 65),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 2, color: const Color.fromARGB(255, 85, 85, 85)),
-                    borderRadius: BorderRadius.all(Radius.circular(3))
-                  ),
-                child: Image.asset(
-                'lib/assets/arse.jpg',
-                width: 250,
-                ),
-                )
-              ],
-            ),
-          )
-        ],
-      ),
-    ),
+    debugShowCheckedModeBanner: false,
+    home: MainPage(), // ⬅ Use custom widget here
   ));
 }
 
+class MainPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: [
+          Image.asset(
+            'assets/bg.png',
+            fit: BoxFit.cover,
+            height: double.infinity,
+            width: double.infinity,
+          ),
+          Center(
+            child: Container(
+              height: 50,
+              width: 250,
+              child: ElevatedButton(
+                child: Text('Play', 
+                style: TextStyle(
+                  color: Colors.black,
+                ),),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomePage()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.amber,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

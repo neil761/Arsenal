@@ -38,6 +38,12 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: "^0.14.4"
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/logo.jpg"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -58,9 +64,38 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/AK47.jpg
+    - assets/AK117.jpg
+    - assets/Arctic.jpg
+    - assets/arse.jpg
+    - assets/bg.png
+    - assets/Bizon.jpg
+    - assets/BY15.jpg
+    - assets/Chopper.jpg
+    - assets/DLQ.jpg
+    - assets/EBR.jpg
+    - assets/Fennec.jpg
+    - assets/Grau.jpg
+    - assets/HS04.jpg
+    - assets/Kilo.jpg
+    - assets/KRM.jpg
+    - assets/LMG.jpg
+    - assets/Locus.jpg
+    - assets/M4.jpg
+    - assets/M13.jpg
+    - assets/M16.jpg
+    - assets/Oden.jpg
+    - assets/operator.jpg
+    - assets/QQ9.jpg
+    - assets/RPD.jpg
+    - assets/Rytec.jpg
+    - assets/Switchblade.jpg
+    - assets/VMP.jpg
+    - assets/bg1.jpg
+    - assets/bg2.jpg
+    - assets/bg3.jpg
+    - assets/logo.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
