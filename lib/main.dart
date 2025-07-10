@@ -1,10 +1,17 @@
+import 'package:codm/pages/guns.dart';
+import 'package:codm/pages/operator.dart';
 import 'package:flutter/material.dart';
 import 'package:codm/pages/home.dart';
 
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: MainPage(), // ⬅ Use custom widget here
+    routes: {
+      '/' : (context) => MainPage(),
+      '/home' : (context) => HomePage(),
+      '/ops' : (context) => Operator(),
+      '/gun' : (context) => GunDetailPage(),
+    }, // ⬅ Use custom widget here
   ));
 }
 
@@ -22,6 +29,7 @@ class MainPage extends StatelessWidget {
           ),
           Center(
             child: Container(
+              margin: EdgeInsets.fromLTRB(0, 150, 0, 0),
               height: 50,
               width: 250,
               child: ElevatedButton(
