@@ -19,69 +19,157 @@ class _HomePageState extends State<HomePage> {
     'Shotgun',
   ];
 
-  final List<Map<String, String>> guns = [
+  final List<Map<String, dynamic>> guns = [
     {
-      'name': 'AK-47', 
-      'category': 'Assault Rifle', 
-      'image': 'assets/AK47.jpg'
+      'name': 'AK-47',
+      'category': 'Assault Rifle',
+      'image': 'assets/AK47.jpg',
+      'damage': '33',
+      'fireRate': '54',
+      'accuracy': '78',
+      'mobility': '60',
+      'range': '86',
+      'control': '89',
+      'skins': [
+        'assets/AK47.jpg', // Example skin, replace with real skin images
+      ]
+    },
+    {
+      'name': 'M4',
+      'category': 'Assault Rifle',
+      'image': 'assets/M4.jpg',
+      'damage': '29',
+      'fireRate': '68',
+      'accuracy': '81',
+      'mobility': '62',
+      'range': '80',
+      'control': '85',
+      'skins': [
+        'assets/M4.jpg',
+      ]
+    },
+    {
+      'name': 'QQ9',
+      'category': 'SMG',
+      'image': 'assets/QQ9.jpg',
+      'damage': '25',
+      'fireRate': '83',
+      'accuracy': '42',
+      'mobility': '102',
+      'range': '46',
+      'control': '42',
+      'skins': [
+        'assets/QQ9.jpg',
+      ]
     },
 
     {
-      'name': 'M4', 
-    'category': 'Assault Rifle', 
-    'image': 'assets/M4.jpg'
-    },
-    
-    {
-      'name': 'QQ9', 
-    'category': 'SMG', 
-    'image': 'assets/QQ9.jpg'
-    },
-
-    {
-      'name': 'Fennec', 
-      'category': 'SMG', 
-      'image': 'assets/Fennec.jpg'
+      'name': 'Fennec',
+      'category': 'SMG',
+      'image': 'assets/Fennec.jpg',
+      'damage': '20',
+      'fireRate': '90',
+      'accuracy': '50',
+      'mobility': '90',
+      'range': '50',
+      'control': '50',
+      'skins': [
+        'assets/Fennec.jpg',
+      ]
     },
 
     {
-      'name': 'S36', 
-      'category': 'LMG', 
-      'image': 'assets/LMG.jpg'
+      'name': 'S36',
+      'category': 'LMG',
+      'image': 'assets/LMG.jpg',
+      'damage': '30',
+      'fireRate': '60',
+      'accuracy': '70',
+      'mobility': '50',
+      'range': '70',
+      'control': '60',
+      'skins': [
+        'assets/LMG.jpg',
+      ]
     },
 
     {
-      'name': 'M4LMG', 
-      'category': 'LMG', 
-      'image': 'assets/Chopper.jpg'
+      'name': 'M4LMG',
+      'category': 'LMG',
+      'image': 'assets/Chopper.jpg',
+      'damage': '35',
+      'fireRate': '55',
+      'accuracy': '65',
+      'mobility': '45',
+      'range': '65',
+      'control': '55',
+      'skins': [
+        'assets/Chopper.jpg',
+      ]
     },
 
     {
-      'name': 'DL Q33', 
-      'category': 'Sniper', 
-      'image': 'assets/DLQ.jpg'
+      'name': 'DL Q33',
+      'category': 'Sniper',
+      'image': 'assets/DLQ.jpg',
+      'damage': '50',
+      'fireRate': '40',
+      'accuracy': '90',
+      'mobility': '40',
+      'range': '100',
+      'control': '40',
+      'skins': [
+        'assets/DLQ.jpg',
+      ]
     },
 
     {
-      'name': 'Arctic .50', 
-      'category': 'Sniper', 
-      'image': 'assets/Arctic.jpg'
+      'name': 'Arctic .50',
+      'category': 'Sniper',
+      'image': 'assets/Arctic.jpg',
+      'damage': '60',
+      'fireRate': '30',
+      'accuracy': '95',
+      'mobility': '30',
+      'range': '120',
+      'control': '30',
+      'skins': [
+        'assets/Arctic.jpg',
+      ]
     },
 
     {
-      'name': 'BY15', 
-      'category': 'Shotgun', 
-      'image': 'assets/BY15.jpg'
+      'name': 'BY15',
+      'category': 'Shotgun',
+      'image': 'assets/BY15.jpg',
+      'damage': '100',
+      'fireRate': '10',
+      'accuracy': '50',
+      'mobility': '30',
+      'range': '30',
+      'control': '20',
+      'skins': [
+        'assets/BY15.jpg',
+      ]
     },
 
     {
-      'name': 'KRM-262', 
-      'category': 'Shotgun', 
-      'image': 'assets/KRM.jpg'
+      'name': 'KRM-262',
+      'category': 'Shotgun',
+      'image': 'assets/KRM.jpg',
+      'damage': '80',
+      'fireRate': '15',
+      'accuracy': '40',
+      'mobility': '20',
+      'range': '25',
+      'control': '15',
+      'skins': [
+        'assets/KRM.jpg',
+      ]
     },
   ];
-  
-   List<Map<String, String>> getFilteredGuns() {
+
+   List<Map<String, dynamic>> getFilteredGuns() {
     if (tabs[currentIndex] == 'All') {
       return guns;
     } else {

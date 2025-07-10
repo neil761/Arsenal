@@ -1,139 +1,101 @@
 import 'package:flutter/material.dart';
-import 'package:codm/pages/guns.dart'; // Import the detail page
 
 class GunDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Retrieve the gun data from the arguments
-    final Map<String, String> gun = ModalRoute.of(context)!.settings.arguments as Map<String, String>;
+    final Map<String, dynamic> gun = ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
 
     return Scaffold(
       appBar: AppBar(
+        title: Text(gun['name'] ?? 'Gun Detail'),
       ),
-      body: Center(
-        child: Column(
-          children: [
-            Image.asset(gun['image'] ?? '', 
-            width: 350,),
-            SizedBox(height: 20),
-            Text(gun['name'] ?? '', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-            Container(
-              child: Column(
-                children: [
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 70),
-                    child: Row(
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: [
+              Image.asset(gun['image'] ?? '', width: 350),
+              SizedBox(height: 20),
+              Text(gun['name'] ?? '', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+              Text(gun['category'] ?? '', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              SizedBox(height: 20),
+              // Stats
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                child: Table(
+                  columnWidths: const {
+                    0: IntrinsicColumnWidth(),
+                    1: FixedColumnWidth(32),
+                    2: IntrinsicColumnWidth(),
+                    3: FixedColumnWidth(32),
+                  },
+                  children: [
+                    TableRow(
                       children: [
-                        Container(
-                          child: Text(
-                            'Damage: ',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.fromLTRB(0, 0, 80, 0),
-                          child: Text(
-                            '33 '
-                          ),
-                        ),
-                        Container(
-                          child: Text(
-                            'Fire Rate: ',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Container(
-                          child: Text(
-                            '54 '
-                          ),
-                        ),
+                        Text('Damage:', style: TextStyle(fontWeight: FontWeight.bold)),
+                        Text(gun['damage'] ?? ''),
+                        Text('Fire Rate:', style: TextStyle(fontWeight: FontWeight.bold)),
+                        Text(gun['fireRate'] ?? ''),
                       ],
                     ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 70),
-                    child: Row(
+                    TableRow(
                       children: [
-                        Container(
-                          child: Text(
-                            'Accuracy: ',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.fromLTRB(0, 0, 73, 0),
-                          child: Text(
-                            '78 '
-                          ),
-                        ),
-                        Container(
-                          child: Text(
-                            'Mobility: ',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Container(
-                          child: Text(
-                            '60'
-                          ),
-                        ),
+                        Text('Accuracy:', style: TextStyle(fontWeight: FontWeight.bold)),
+                        Text(gun['accuracy'] ?? ''),
+                        Text('Mobility:', style: TextStyle(fontWeight: FontWeight.bold)),
+                        Text(gun['mobility'] ?? ''),
                       ],
                     ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 70),
-                    child: Row(
+                    TableRow(
                       children: [
-                        Container(
-                          child: Text(
-                            'Range: ',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.fromLTRB(0, 0, 95, 0),
-                          child: Text(
-                            '86'
-                          ),
-                        ),
-                        Container(
-                          child: Text(
-                            'Control: ',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Container(
-                          child: Text(
-                            '89'
-                          ),
-                        ),
+                        Text('Range:', style: TextStyle(fontWeight: FontWeight.bold)),
+                        Text(gun['range'] ?? ''),
+                        Text('Control:', style: TextStyle(fontWeight: FontWeight.bold)),
+                        Text(gun['control'] ?? ''),
                       ],
                     ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Container(
-                          child: Text(
-                            'SKINS',
-                            style: TextStyle(
-                              fontSize: 30,
-                            
-                            ),
-                          ),
-                        )
-                      ],
-                    )
-                  ),
-
-
-                ],
+                  ],
+                ),
               ),
-            )
-          ],
+              // Skins Section
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'SKINS',
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                ),
+              ),
+              Container(
+                height: 120,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: (gun['skins'] as List<String>).map((skinPath) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Image.asset(skinPath, width: 100, height: 100),
+                    );
+                  }).toList(),
+                ),
+              ),
+            ],
+          ),
         ),
+      ),
+    );
+  }
+
+  Widget statRow(String label1, String? value1, String label2, String? value2) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 2.0, horizontal: 8.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text('$label1: ', style: TextStyle(fontWeight: FontWeight.bold)),
+          Text(value1 ?? ''),
+          SizedBox(width: 20),
+          Text('$label2: ', style: TextStyle(fontWeight: FontWeight.bold)),
+          Text(value2 ?? ''),
+        ],
       ),
     );
   }
