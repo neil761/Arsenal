@@ -1,11 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:codm/pages/guns.dart'; // Import the detail page
 
 class GunDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Retrieve the gun data from the arguments
-    final Map<String, String> gun = ModalRoute.of(context)!.settings.arguments as Map<String, String>;
+    // Retrieve the gun data from the arguments with null checking
+    final arguments = ModalRoute.of(context)?.settings.arguments;
+    
+    if (arguments == null) {
+      return Scaffold(
+        appBar: AppBar(
+          title: Text('Error'),
+        ),
+        body: Center(
+          child: Text('No gun data provided'),
+        ),
+      );
+    }
+    
+    final Map<String, dynamic> gun = arguments as Map<String, dynamic>;
 
     return Scaffold(
       appBar: AppBar(
@@ -33,7 +45,7 @@ class GunDetailPage extends StatelessWidget {
                         Container(
                           margin: EdgeInsets.fromLTRB(0, 0, 80, 0),
                           child: Text(
-                            '33 '
+                            gun['damage'] ?? '0'
                           ),
                         ),
                         Container(
@@ -44,7 +56,7 @@ class GunDetailPage extends StatelessWidget {
                         ),
                         Container(
                           child: Text(
-                            '54 '
+                            gun['fireRate'] ?? '0'
                           ),
                         ),
                       ],
@@ -63,7 +75,7 @@ class GunDetailPage extends StatelessWidget {
                         Container(
                           margin: EdgeInsets.fromLTRB(0, 0, 73, 0),
                           child: Text(
-                            '78 '
+                            gun['accuracy'] ?? '0'
                           ),
                         ),
                         Container(
@@ -74,7 +86,7 @@ class GunDetailPage extends StatelessWidget {
                         ),
                         Container(
                           child: Text(
-                            '60'
+                            gun['mobility'] ?? '0'
                           ),
                         ),
                       ],
@@ -93,7 +105,7 @@ class GunDetailPage extends StatelessWidget {
                         Container(
                           margin: EdgeInsets.fromLTRB(0, 0, 95, 0),
                           child: Text(
-                            '86'
+                            gun['range'] ?? '0'
                           ),
                         ),
                         Container(
@@ -104,7 +116,7 @@ class GunDetailPage extends StatelessWidget {
                         ),
                         Container(
                           child: Text(
-                            '89'
+                            gun['control'] ?? '0'
                           ),
                         ),
                       ],
@@ -120,12 +132,57 @@ class GunDetailPage extends StatelessWidget {
                             'SKINS',
                             style: TextStyle(
                               fontSize: 30,
-                            
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         )
                       ],
                     )
+                  ),
+                  Container(
+                    height: 300,
+                    child: ListView.builder(
+                      scrollDirection: Axis.vertical,
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      itemCount: (gun['skins'] as List<dynamic>?)?.length ?? 0,
+                      itemBuilder: (context, index) {
+                        final skins = gun['skins'] as List<dynamic>?;
+                        if (skins == null || index >= skins.length) return Container();
+                        
+                        final skin = skins[index] as Map<String, dynamic>;
+                        return Container(
+                          margin: EdgeInsets.only(bottom: 20),
+                          child: Column(
+                            children: [
+                              Container(
+                                width: double.infinity,
+                                height: 200,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(12),
+                                  border: Border.all(color: Colors.grey, width: 2),
+                                ),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(10),
+                                  child: Image.asset(
+                                    skin['image'] ?? '',
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: 10),
+                              Text(
+                                skin['name'] ?? '',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                    ),
                   ),
 
 
