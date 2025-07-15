@@ -20,15 +20,21 @@ class GunDetailPage extends StatelessWidget {
     final Map<String, dynamic> gun = arguments as Map<String, dynamic>;
 
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 28, 28, 28),
       appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 75, 83, 32),
+        iconTheme: IconThemeData(color: Colors.white),
       ),
       body: Center(
         child: Column(
           children: [
-            Image.asset(gun['image'] ?? '', 
-            width: 350,),
             SizedBox(height: 20),
-            Text(gun['name'] ?? '', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+            Container(
+              margin: EdgeInsets.only(top: 20),
+              child: Image.asset(gun['image'] ?? '', width: 350),
+            ),
+            SizedBox(height: 20),
+            Text(gun['name'] ?? '', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white)),
             Container(
               child: Column(
                 children: [
@@ -39,24 +45,26 @@ class GunDetailPage extends StatelessWidget {
                         Container(
                           child: Text(
                             'Damage: ',
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
                           ),
                         ),
                         Container(
                           margin: EdgeInsets.fromLTRB(0, 0, 80, 0),
                           child: Text(
-                            gun['damage'] ?? '0'
+                            gun['damage'] ?? '0',
+                            style: TextStyle(color: Colors.white),
                           ),
                         ),
                         Container(
                           child: Text(
                             'Fire Rate: ',
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
                           ),
                         ),
                         Container(
                           child: Text(
-                            gun['fireRate'] ?? '0'
+                            gun['fireRate'] ?? '0',
+                            style: TextStyle(color: Colors.white),
                           ),
                         ),
                       ],
@@ -69,24 +77,26 @@ class GunDetailPage extends StatelessWidget {
                         Container(
                           child: Text(
                             'Accuracy: ',
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
                           ),
                         ),
                         Container(
                           margin: EdgeInsets.fromLTRB(0, 0, 73, 0),
                           child: Text(
-                            gun['accuracy'] ?? '0'
+                            gun['accuracy'] ?? '0',
+                            style: TextStyle(color: Colors.white),
                           ),
                         ),
                         Container(
                           child: Text(
                             'Mobility: ',
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
                           ),
                         ),
                         Container(
                           child: Text(
-                            gun['mobility'] ?? '0'
+                            gun['mobility'] ?? '0',
+                            style: TextStyle(color: Colors.white),
                           ),
                         ),
                       ],
@@ -99,24 +109,26 @@ class GunDetailPage extends StatelessWidget {
                         Container(
                           child: Text(
                             'Range: ',
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
                           ),
                         ),
                         Container(
                           margin: EdgeInsets.fromLTRB(0, 0, 95, 0),
                           child: Text(
-                            gun['range'] ?? '0'
+                            gun['range'] ?? '0',
+                            style: TextStyle(color: Colors.white),
                           ),
                         ),
                         Container(
                           child: Text(
                             'Control: ',
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
                           ),
                         ),
                         Container(
                           child: Text(
-                            gun['control'] ?? '0'
+                            gun['control'] ?? '0',
+                            style: TextStyle(color: Colors.white),
                           ),
                         ),
                       ],
@@ -133,6 +145,7 @@ class GunDetailPage extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 30,
                               fontWeight: FontWeight.bold,
+                              color: Colors.white,
                             ),
                           ),
                         )
@@ -148,8 +161,18 @@ class GunDetailPage extends StatelessWidget {
                       itemBuilder: (context, index) {
                         final skins = gun['skins'] as List<dynamic>?;
                         if (skins == null || index >= skins.length) return Container();
-                        
                         final skin = skins[index] as Map<String, dynamic>;
+                        final String? skinName = skin['name'];
+                        Color? bgColor;
+                        Color textColor = Colors.white;
+                        if (skinName != null && skinName.contains('Mythic')) {
+                          bgColor = Colors.red;
+                        } else if (skinName != null && skinName.contains('Legendary')) {
+                          bgColor = Colors.orange[300];
+                        } else {
+                          bgColor = null;
+                          textColor = Colors.black;
+                        }
                         return Container(
                           margin: EdgeInsets.only(bottom: 20),
                           child: Column(
@@ -170,14 +193,25 @@ class GunDetailPage extends StatelessWidget {
                                 ),
                               ),
                               SizedBox(height: 10),
-                              Text(
-                                skin['name'] ?? '',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
+                              if (skinName != null)
+                                Container(
+                                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                                  decoration: BoxDecoration(
+                                    color: bgColor,
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  child: Text(
+                                    skinName,
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                      color: textColor,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
                                 ),
-                                textAlign: TextAlign.center,
-                              ),
+                              if (skinName == null)
+                                SizedBox.shrink(),
                             ],
                           ),
                         );
