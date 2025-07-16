@@ -19,126 +19,174 @@ class _OperatorState extends State<Operator> {
   final List<Map<String, String>> operators = [
     // Legendaery ops
     {
-      'name': 'Alias 2', 
-      'image': 'assets/ciph2.jpg', 
-      'category': 'Legendary'
+      'name': 'Cipher - Absolute Resolution', 
+      'image': 'assets/ciph6.jpg', 
+      'modalImage': 'assets/ciph5.jpg',
+      'category': 'Legendary',
+      'bio': 'Cipher was unafraid when the simulation rebelled. Indeed, he embraced the chaos'
+    },
+    {
+      'name': 'Fiona St. George - Eternal Blizzard', 
+      'image': 'assets/fio6.jpg', 
+      'modalImage': 'assets/fio5.jpg',
+      'category': 'Legendary',
+      'bio': 'The weak shall be pruned, like a branch before winter. St. George will cut through them with ferocity and speed.'
+    },
+    {
+      'name': 'Dark Shepherd - Astral Marauder', 
+      'image': 'assets/dark6.jpg', 
+      'modalImage': 'assets/dark5.jpg',
+      'category': 'Legendary',
+      'bio': 'Wherever his ship prowls the void, the Astral Marauder reaps, culling the weak.'
+    },
+    {
+      'name': 'Foxtrot - Deadly Fragments', 
+      'image': 'assets/fox6.jpg', 
+      'modalImage': 'assets/fox5.jpg',
+      'category': 'Legendary',
+      'bio': 'Within the Iron Will exists the sum of human knowledge. When Foxtrot entered its mind seeking answers, it knew her,reflecting back at her every tragedy, every mistake, every failure she ever suffered, nearly crusing her under the weight of her regrets.'
+    },
+    {
+      'name': 'Dame - Break of Dawn', 
+      'image': 'assets/dame6.jpg', 
+      'modalImage': 'assets/dame5.jpg',
+      'category': 'Legendary',
+      'bio': 'Dame Lives! This many come as a shock to her estranged daughter and former love and current arch rival: Templar. But beneath her cruel exterior beats a passionate and loyal heart.'
+    },
+    {
+      'name': 'Richtofen - Dark Designs', 
+      'image': 'assets/rich6.jpg', 
+      'modalImage': 'assets/rich5.jpg',
+      'category': 'Legendary',
+      'bio': 'Rumored to be over a hundred years old, the subject of his own experience.'
+    },
+    {
+      'name': 'Hidora Kai - Cruel Night', 
+      'image': 'assets/kai6.jpg', 
+      'modalImage': 'assets/kai5.jpg',
+      'category': 'Legendary',
+      'bio': 'He believed death had claimed him, but the world was not done with him yet. So he lives on, but with a mind clouded by vague memories, the life before fading with each passing day. Is he truly alive, or a shadow of his former self?'
+    },
+    {
+      'name': 'Manta Ray - Aquarian Blade', 
+      'image': 'assets/ray6.jpg', 
+      'modalImage': 'assets/ray5.jpg',
+      'category': 'Legendary',
+      'bio': 'khhdwbsfdskljbclaskvcdslhifvsbk'
     },
     {
       'name': 'Alias 2', 
-      'image': 'assets/fio2.jpg', 
-      'category': 'Legendary'
+      'image': 'assets/nyx6.jpg', 
+      'modalImage': 'assets/nyx5.jpg',
+      'category': 'Legendary',
+      'bio': 'khhdwbsfdskljbclaskvcdslhifvsbk'
     },
     {
       'name': 'Alias 2', 
-      'image': 'assets/dark2.jpg', 
-      'category': 'Legendary'
+      'image': 'assets/soph6.jpg', 
+      'modalImage': 'assets/soph5.jpg',
+      'category': 'Legendary',
+      'bio': 'khhdwbsfdskljbclaskvcdslhifvsbk'
     },
     {
       'name': 'Alias 2', 
-      'image': 'assets/fox2.jpg', 
-      'category': 'Legendary'
+      'image': 'assets/ph6.jpg', 
+      'modalImage': 'assets/ph5.jpg',
+      'category': 'Legendary',
+      'bio': 'khhdwbsfdskljbclaskvcdslhifvsbk'
     },
     {
       'name': 'Alias 2', 
-      'image': 'assets/dame2.jpg', 
-      'category': 'Legendary'
+      'image': 'assets/price6.jpg', 
+      'modalImage': 'assets/price5.jpg',
+      'category': 'Legendary',
+      'bio': 'khhdwbsfdskljbclaskvcdslhifvsbk'
     },
     {
       'name': 'Alias 2', 
-      'image': 'assets/rich2.jpg', 
-      'category': 'Legendary'
+      'image': 'assets/fire6.jpg', 
+      'modalImage': 'assets/fire5.jpg',
+      'category': 'Legendary',
+      'bio': 'khhdwbsfdskljbclaskvcdslhifvsbk'
     },
     {
       'name': 'Alias 2', 
-      'image': 'assets/kai2.jpg', 
-      'category': 'Legendary'
+      'image': 'assets/out6.jpg', 
+      'modalImage': 'assets/out5.jpg',
+      'category': 'Legendary',
+      'bio': 'khhdwbsfdskljbclaskvcdslhifvsbk'
     },
     {
       'name': 'Alias 2', 
-      'image': 'assets/ray2.jpg', 
-      'category': 'Legendary'
+      'image': 'assets/gun6.jpg', 
+      'modalImage': 'assets/gun5.jpg',
+      'category': 'Legendary',
+      'bio': 'khhdwbsfdskljbclaskvcdslhifvsbk'
     },
     {
       'name': 'Alias 2', 
-      'image': 'assets/nyx2.jpg', 
-      'category': 'Legendary'
+      'image': 'assets/reap6.jpg', 
+      'modalImage': 'assets/reap5.jpg',
+      'category': 'Legendary',
+      'bio': 'khhdwbsfdskljbclaskvcdslhifvsbk'
     },
     {
       'name': 'Alias 2', 
-      'image': 'assets/soph2.jpg', 
-      'category': 'Legendary'
+      'image': 'assets/ghost(6).jpg', 
+      'modalImage': 'assets/ghost(5).jpg',
+      'category': 'Legendary',
+      'bio': 'khhdwbsfdskljbclaskvcdslhifvsbk'
     },
     {
       'name': 'Alias 2', 
-      'image': 'assets/ph2.jpg', 
-      'category': 'Legendary'
+      'image': 'assets/mace6.jpg', 
+      'modalImage': 'assets/mace5.jpg',
+      'category': 'Legendary',
+      'bio': 'khhdwbsfdskljbclaskvcdslhifvsbk'
     },
     {
       'name': 'Alias 2', 
-      'image': 'assets/price2.jpg', 
-      'category': 'Legendary'
-    },
-    {
-      'name': 'Alias 2', 
-      'image': 'assets/fire2.jpg', 
-      'category': 'Legendary'
-    },
-    {
-      'name': 'Alias 2', 
-      'image': 'assets/out2.jpg', 
-      'category': 'Legendary'
-    },
-    {
-      'name': 'Alias 2', 
-      'image': 'assets/gun2.jpg', 
-      'category': 'Legendary'
-    },
-    {
-      'name': 'Alias 2', 
-      'image': 'assets/reap2.jpg', 
-      'category': 'Legendary'
-    },
-    {
-      'name': 'Alias 2', 
-      'image': 'assets/ghost2.jpg', 
-      'category': 'Legendary'
-    },
-    {
-      'name': 'Alias 2', 
-      'image': 'assets/mace2.jpg', 
-      'category': 'Legendary'
-    },
-    {
-      'name': 'Alias 2', 
-      'image': 'assets/nik2.jpg', 
-      'category': 'Legendary'
+      'image': 'assets/nik6.jpg', 
+      'modalImage': 'assets/nik5.jpg',
+      'category': 'Legendary',
+      'bio': 'khhdwbsfdskljbclaskvcdslhifvsbk'
     },
     
     // Mythic (4)
     {
       'name': 'Pia 4', 
-      'image': 'assets/pia4.jpg', 
-      'category': 'Mythic'
+      'image': 'assets/pia8.jpg', 
+      'modalImage': 'assets/pia7.jpg',
+      'category': 'Mythic',
+      'bio': 'khhdwbsfdskljbclaskvcdslhifvsbk'
     },
     {
       'name': 'Pia 4', 
-      'image': 'assets/ghost4.jpg', 
-      'category': 'Mythic'
+      'image': 'assets/ghost8.jpg', 
+      'modalImage': 'assets/ghost7.jpg',
+      'category': 'Mythic',
+      'bio': 'khhdwbsfdskljbclaskvcdslhifvsbk'
     },
     {
       'name': 'Pia 4', 
-      'image': 'assets/sir4.jpg', 
-      'category': 'Mythic'
+      'image': 'assets/sir8.jpg', 
+      'modalImage': 'assets/sir7.jpg',
+      'category': 'Mythic',
+      'bio': 'khhdwbsfdskljbclaskvcdslhifvsbk'
     },
     {
       'name': 'Pia 4', 
-      'image': 'assets/tem4.jpg', 
-      'category': 'Mythic'
+      'image': 'assets/tem8.jpg', 
+      'modalImage': 'assets/tem7.jpg',
+      'category': 'Mythic',
+      'bio': 'khhdwbsfdskljbclaskvcdslhifvsbk'
     },
     {
       'name': 'Pia 4', 
-      'image': 'assets/spec4.jpg', 
-      'category': 'Mythic'
+      'image': 'assets/spec8.jpg', 
+      'modalImage': 'assets/spec7.jpg',
+      'category': 'Mythic',
+      'bio': 'khhdwbsfdskljbclaskvcdslhifvsbk'
     },
   ];
 
@@ -248,43 +296,122 @@ class _OperatorState extends State<Operator> {
           ),
         
           Expanded(
-            child: GridView.builder(
-              padding: EdgeInsets.all(16),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                crossAxisSpacing: 16,
-                mainAxisSpacing: 16,
-                childAspectRatio: 0.8,
-              ),
+            child: ListView.builder(
+              padding: EdgeInsets.all(12),
               itemCount: getFilteredOperators().length,
               itemBuilder: (context, index) {
                 final op = getFilteredOperators()[index];
-                return Column(
-                  children: [
-                    Expanded(
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(12),
+                return Container(
+                  margin: EdgeInsets.only(bottom: 16),
+                  padding: EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: Color(0xFF444444),
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
                         child: Image.asset(
                           op['image']!,
-                          fit: BoxFit.cover,
-                          width: double.infinity,
+                          width: 90,
+                          height: 60,
+                          fit: BoxFit.fitHeight,
                         ),
                       ),
-                    ),
-                    SizedBox(height: 8),
-                    Container(
-                      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                      decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(0.7),
-                        borderRadius: BorderRadius.circular(6),
+                      SizedBox(width: 16),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              op['name']!,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
+                            ),
+                            SizedBox(height: 4),
+                            Text(
+                              op['category']!,
+                              style: TextStyle(
+                                color: Colors.grey[300],
+                                fontSize: 16,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                      child: Text(
-                        op['name']!,
-                        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-                        textAlign: TextAlign.center,
+                      ElevatedButton(
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (context) => AlertDialog(
+                              backgroundColor: Color.fromARGB(255, 28, 28, 28),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                              content: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(12),
+                                    child: Image.asset(
+                                      op['modalImage'] ?? op['image']!,
+                                      fit: BoxFit.fitHeight,
+                                      width: 200,
+                                      height: 200,
+                                    ),
+                                  ),
+                                  SizedBox(height: 16),
+                                  Text(
+                                    op['name']!,
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16,
+                                    ),
+                                  ),
+                                  SizedBox(height: 8),
+                                  Text(
+                                    op['category']!,
+                                    style: TextStyle(
+                                      color: Colors.amber,
+                                      fontSize: 16,
+                                    ),
+                                  ),
+                                  Text(
+                                    op['bio']!,
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 15,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              actions: [
+                                TextButton(
+                                  child: Text('Close', style: TextStyle(color: Colors.amber)),
+                                  onPressed: () => Navigator.of(context).pop(),
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                        child: Text('View'),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.amber,
+                          foregroundColor: Colors.black,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 );
               },
             ),
